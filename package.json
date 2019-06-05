@@ -1,0 +1,25 @@
+{
+  "name": "earth-distance-js",
+  "version": "1.0.0",
+  "description": "A collection of earth-distance calulations module, for high accuracy and high speed implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "haversine",
+    "distance",
+    "geolocation",
+    "coordinates",
+    "bounding",
+    "box",
+    "law",
+    "of",
+    "spherical",
+    "cosines",
+    "midpoint",
+    "equirectangular"
+  ],
+  "author": "Hugo Fok",
+  "license": "MIT"
+}
