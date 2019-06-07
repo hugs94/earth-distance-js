@@ -42,7 +42,7 @@ console.log(NewyorkToBoston);
 Returns distance in KM
 
 ```
-const { sphericalCosines } = require('./index');
+const { sphericalCosines } = require('earth-distance-js');
 
 var Newyork = {
     lat: 40.6971,
@@ -63,7 +63,7 @@ console.log(NewyorkToBoston);
 Returns distance in KM
 
 ```
-const { equirectangular } = require('./index');
+const { equirectangular } = require('earth-distance-js');
 
 var Newyork = {
     lat: 40.6971,
@@ -87,7 +87,7 @@ console.log(NewyorkToBoston);
 Returns min/max set of geopoints
 
 ```
-const { getBoundingBox } = require('./index');
+const { getBoundingBox } = require('earth-distance-js');
 
 var Newyork = {
     lat: 40.6971,

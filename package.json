@@ -1,6 +1,6 @@
 {
   "name": "earth-distance-js",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "A collection of earth-distance calulations module, for high accuracy and high speed implementation",
   "main": "index.js",
   "scripts": {
