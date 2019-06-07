@@ -21,6 +21,7 @@ Number.prototype.radToDeg = function() {
 };
 
 function haversine(a, b) {
+  console.log(a, b);
   var δφ = Math.cos((a.lat + b.lat) * PI_360);
   var Δφ = (b.lat - a.lat) * PI_360;
   var Δλ = (b.lon - a.lon) * PI_360;
@@ -131,7 +132,9 @@ function getBoundingBox(centerPoint, distance) {
   ];
 }
 
-module.exports = haversine;
-module.exports = sphericalCosines;
-module.exports = equirectangular;
-module.exports = getBoundingBox;
+module.exports = {
+  haversine,
+  sphericalCosines,
+  equirectangular,
+  getBoundingBox
+};
