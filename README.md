@@ -18,7 +18,7 @@ $ npm install earth-distance-js
 
 ## Examples
 
-###Haversine:
+### Haversine:
 Returns distance in KM
 
 ```
@@ -38,7 +38,7 @@ console.log(NewyorkToBoston);
 // --> 308.84810486810926 
 
 ```
-###Spherical Cosine
+### Spherical Cosine
 Returns distance in KM
 
 ```
