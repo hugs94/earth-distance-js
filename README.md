@@ -8,6 +8,7 @@ Pure JS implementation of basic mathmatical solutions to geo-location measuremen
 - Spherical Law of Cosines: An alternative measurement between two geopoints
 - Equirectangular Approximation: A high performace alterantive (with accuracy loss) to Haversine
 - Bounding Box: Finds the max/min lat/lon values from a centerpoint as a square
+- Validation: Checks inputed lat/lon values to be within -90 to 90 and -180 to 180
 
 ## Installation
 
