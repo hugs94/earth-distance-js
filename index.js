@@ -1,3 +1,4 @@
+const { validateCoordinates } = require('./validators');
 'use strict';
 
 /**
@@ -13,14 +14,17 @@
 var R = 6378.137;
 var PI_360 = Math.PI / 360;
 
-Number.prototype.degToRad = function() {
+Number.prototype.degToRad = function () {
   return this * (Math.PI / 180);
 };
-Number.prototype.radToDeg = function() {
+Number.prototype.radToDeg = function () {
   return (180 * this) / Math.PI;
 };
 
 function haversine(a, b) {
+  var isValid = validateCoordinates(a, b);
+  if (!isValid) return 'Invalid arguments. You must pass in at least a geopoint as the first argument. Latitude must be a number between -90 and 90. Longitude must be a number between -180 and 180'; 
+  
   console.log(a, b);
   var δφ = Math.cos((a.lat + b.lat) * PI_360);
   var Δφ = (b.lat - a.lat) * PI_360;
@@ -31,13 +35,15 @@ function haversine(a, b) {
   var d = R * c;
   return d;
 }
-
 /**
  * Spherical Law of Cosines
  * Note: may run slower than haversine
  * d = acos( sin φ1 ⋅ sin φ2 + cos φ1 ⋅ cos φ2 ⋅ cos Δλ ) ⋅ R
  */
 function sphericalCosines(a, b) {
+  var isValid = validateCoordinates(a, b);
+  if (!isValid) return 'Invalid arguments. You must pass at least a geopoint as the first argument. Latitude must be a number between -90 and 90. Longitude must be a number between -180 and 180';
+
   var φ1 = a.lat.degToRad();
   var φ2 = b.lat.degToRad();
   var δλ = (b.lon - a.lon).degToRad();
@@ -49,6 +55,7 @@ function sphericalCosines(a, b) {
   return d;
 }
 
+
 /**
  * Equirectangular Approximation
  * x = Δλ ⋅ cos φm
@@ -58,6 +65,9 @@ function sphericalCosines(a, b) {
  * For higher performace with accuracy loss
  */
 function equirectangular(a, b) {
+  var isValid = validateCoordinates(a, b);
+  if (!isValid) return 'Invalid arguments. You must pass at least a geopoint as the first argument. Latitude must be a number between -90 and 90. Longitude must be a number between -180 and 180';
+
   var λ1 = a.lat.degToRad();
   var λ2 = b.lat.degToRad();
   var φ1 = a.lon.degToRad();
@@ -83,9 +93,14 @@ function getBoundingBox(centerPoint, distance) {
     minLon,
     maxLon,
     deltaLon;
-  if (distance < 0) {
-    return 'Illegal arguments';
+  
+  var isValid = validateCoordinates(centerPoint); 
+  if (!isValid) return 'Invalid arguments. You must pass at least a geopoint as the first argument. Latitude must be a number between -90 and 90. Longitude must be a number between -180 and 180';
+  
+  if (distance < 0 || !distance) {
+    return 'Distance is required and cannot be less than zero';
   }
+
   // coordinate limits
   MIN_LAT = (-90).degToRad();
   MAX_LAT = (90).degToRad();
