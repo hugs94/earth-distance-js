@@ -1,5 +1,5 @@
-const { validateCoordinates } = require('./validators');
 'use strict';
+const { validateCoordinates } = require('./validators');
 
 /**
  * Original Haversine Formula (shortest distance over earth surface)
@@ -14,17 +14,18 @@ const { validateCoordinates } = require('./validators');
 var R = 6378.137;
 var PI_360 = Math.PI / 360;
 
-Number.prototype.degToRad = function () {
+Number.prototype.degToRad = function() {
   return this * (Math.PI / 180);
 };
-Number.prototype.radToDeg = function () {
+Number.prototype.radToDeg = function() {
   return (180 * this) / Math.PI;
 };
 
 function haversine(a, b) {
   var isValid = validateCoordinates(a, b);
-  if (!isValid) return 'Invalid arguments. You must pass in at least a geopoint as the first argument. Latitude must be a number between -90 and 90. Longitude must be a number between -180 and 180'; 
-  
+  if (!isValid)
+    return 'Invalid arguments. You must pass in at least a geopoint as the first argument. Latitude must be a number between -90 and 90. Longitude must be a number between -180 and 180';
+
   console.log(a, b);
   var δφ = Math.cos((a.lat + b.lat) * PI_360);
   var Δφ = (b.lat - a.lat) * PI_360;
@@ -42,7 +43,8 @@ function haversine(a, b) {
  */
 function sphericalCosines(a, b) {
   var isValid = validateCoordinates(a, b);
-  if (!isValid) return 'Invalid arguments. You must pass at least a geopoint as the first argument. Latitude must be a number between -90 and 90. Longitude must be a number between -180 and 180';
+  if (!isValid)
+    return 'Invalid arguments. You must pass at least a geopoint as the first argument. Latitude must be a number between -90 and 90. Longitude must be a number between -180 and 180';
 
   var φ1 = a.lat.degToRad();
   var φ2 = b.lat.degToRad();
@@ -55,7 +57,6 @@ function sphericalCosines(a, b) {
   return d;
 }
 
-
 /**
  * Equirectangular Approximation
  * x = Δλ ⋅ cos φm
@@ -66,7 +67,8 @@ function sphericalCosines(a, b) {
  */
 function equirectangular(a, b) {
   var isValid = validateCoordinates(a, b);
-  if (!isValid) return 'Invalid arguments. You must pass at least a geopoint as the first argument. Latitude must be a number between -90 and 90. Longitude must be a number between -180 and 180';
+  if (!isValid)
+    return 'Invalid arguments. You must pass at least a geopoint as the first argument. Latitude must be a number between -90 and 90. Longitude must be a number between -180 and 180';
 
   var λ1 = a.lat.degToRad();
   var λ2 = b.lat.degToRad();
@@ -93,10 +95,11 @@ function getBoundingBox(centerPoint, distance) {
     minLon,
     maxLon,
     deltaLon;
-  
-  var isValid = validateCoordinates(centerPoint); 
-  if (!isValid) return 'Invalid arguments. You must pass at least a geopoint as the first argument. Latitude must be a number between -90 and 90. Longitude must be a number between -180 and 180';
-  
+
+  var isValid = validateCoordinates(centerPoint);
+  if (!isValid)
+    return 'Invalid arguments. You must pass at least a geopoint as the first argument. Latitude must be a number between -90 and 90. Longitude must be a number between -180 and 180';
+
   if (distance < 0 || !distance) {
     return 'Distance is required and cannot be less than zero';
   }

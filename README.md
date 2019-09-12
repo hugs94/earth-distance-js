@@ -20,9 +20,10 @@ $ npm install earth-distance-js
 ## Examples
 
 ### Haversine:
+
 Returns distance in KM
 
-```
+```javascript
 const { haversine } = require('earth-distance-js');
 
 var Newyork = {
@@ -36,13 +37,15 @@ var Boston = {
 var NewyorkToBoston = haversine(Newyork, Boston);
 console.log(NewyorkToBoston);
 
-// --> 308.84810486810926 
+// --> 308.84810486810926
 
 ```
+
 ### Spherical Cosine
+
 Returns distance in KM
 
-```
+```javascript
 const { sphericalCosines } = require('earth-distance-js');
 
 var Newyork = {
@@ -61,9 +64,10 @@ console.log(NewyorkToBoston);
 ```
 
 ### Equirectangular Eq
+
 Returns distance in KM
 
-```
+```javascript
 const { equirectangular } = require('earth-distance-js');
 
 var Newyork = {
@@ -80,14 +84,16 @@ console.log(NewyorkToBoston);
 
 // --> 339.304994196915
 ```
+
 > **NOTE:** `equirectangular` will be inaccurate over large distances. However, it is more   
 > performant than `haversine`. Over short distances metrics where exact distance does not matter,
 > is generally the best use scenario. 
 
 ### Bounding Box
+
 Returns min/max set of geopoints
 
-```
+```javascript
 const { getBoundingBox } = require('earth-distance-js');
 
 var Newyork = {
@@ -110,7 +116,6 @@ console.log(NewyorkBoundBox);
 > vertial' maxima, rather than a 'max radius', the distance of the min/max geopoints will be
 > farther (similar to isosceles right angle triangle);
 
-
-
 ## License
+
 MIT
