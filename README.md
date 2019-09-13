@@ -46,7 +46,7 @@ console.log(NewyorkToBoston);
 
 Returns distance in KM
 
-```javascript
+```JavaSscript
 const { sphericalCosines } = require('earth-distance-js');
 
 var Newyork = {
@@ -68,7 +68,7 @@ console.log(NewyorkToBoston);
 
 Returns distance in KM
 
-```javascript
+```JavaScript
 const { equirectangular } = require('earth-distance-js');
 
 var Newyork = {
