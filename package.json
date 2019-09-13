@@ -4,14 +4,15 @@
   "description": "A collection of earth-distance calulations module, for high accuracy and high speed implementation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/hugs94/earth-distance-js"
   },
   "bugs": {
-    "url": "https://github.com/hugs94/earth-distance-js/issues"},
+    "url": "https://github.com/hugs94/earth-distance-js/issues"
+  },
   "keywords": [
     "haversine",
     "distance",
@@ -27,5 +28,8 @@
     "equirectangular"
   ],
   "author": "Hugo Fok",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
 }
