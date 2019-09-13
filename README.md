@@ -24,7 +24,7 @@ Using npm run:
 
 Returns distance in KM
 
-```javascript
+```JavaScript
 const { haversine } = require('earth-distance-js');
 
 var Newyork = {
@@ -46,7 +46,7 @@ console.log(NewyorkToBoston);
 
 Returns distance in KM
 
-```JavaSscript
+```JavaScript
 const { sphericalCosines } = require('earth-distance-js');
 
 var Newyork = {
