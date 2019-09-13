@@ -12,14 +12,15 @@ Pure JS implementation of basic mathmatical solutions to geo-location measuremen
 
 ## Installation
 
-Using npm:
-```
-$ npm install earth-distance-js
+Using npm run:
+
+```bash
+    npm install earth-distance-js
 ```
 
 ## Examples
 
-### Haversine:
+### Haversine
 
 Returns distance in KM
 
@@ -85,9 +86,9 @@ console.log(NewyorkToBoston);
 // --> 339.304994196915
 ```
 
-> **NOTE:** `equirectangular` will be inaccurate over large distances. However, it is more   
+> **NOTE:** `equirectangular` will be inaccurate over large distances. However, it is more
 > performant than `haversine`. Over short distances metrics where exact distance does not matter,
-> is generally the best use scenario. 
+> is generally the best use scenario.
 
 ### Bounding Box
 
