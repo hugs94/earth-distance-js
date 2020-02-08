@@ -26,7 +26,6 @@ function haversine(a, b) {
   if (!isValid)
     return 'Invalid arguments. You must pass in at least a geopoint as the first argument. Latitude must be a number between -90 and 90. Longitude must be a number between -180 and 180';
 
-  console.log(a, b);
   var δφ = Math.cos((a.lat + b.lat) * PI_360);
   var Δφ = (b.lat - a.lat) * PI_360;
   var Δλ = (b.lon - a.lon) * PI_360;
