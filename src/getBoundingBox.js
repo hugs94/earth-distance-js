@@ -9,6 +9,10 @@ Number.prototype.radToDeg = function() {
   return (180 * this) / Math.PI;
 };
 
+/**
+ * @param {Object} centerPoint { lat: latitude, lon: longitude }
+ * @param {Number} distance Number distance in KM
+ */
 function getBoundingBox(centerPoint, distance) {
   var MIN_LAT,
     MAX_LAT,

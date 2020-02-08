@@ -10,6 +10,8 @@ Number.prototype.degToRad = function() {
  * Spherical Law of Cosines
  * Note: may run slower than haversine
  * d = acos( sin φ1 ⋅ sin φ2 + cos φ1 ⋅ cos φ2 ⋅ cos Δλ ) ⋅ R
+ * @param {Object} a { lat: latitude }
+ * @param {Object} b { lon: longitude }
  */
 function sphericalCosines(a, b) {
   var isValid = validateCoordinates(a, b);
