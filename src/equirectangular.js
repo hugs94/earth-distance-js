@@ -13,7 +13,10 @@ Number.prototype.degToRad = function() {
  * d = R ⋅ √x² + y²
  *
  * For higher performace with accuracy loss
+ * @param {Object} a { lat: latitude }
+ * @param {Object} b { lon: longitude }
  */
+
 function equirectangular(a, b) {
   var isValid = validateCoordinates(a, b);
   if (!isValid)

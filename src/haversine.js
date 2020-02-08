@@ -11,6 +11,10 @@ const { R, PI_360 } = require('./constants');
  * note that angles need to be in radians
  */
 
+/**
+ * @param {Object} a { lat: latitude }
+ * @param {Object} b { lon: longitude }
+ */
 function haversine(a, b) {
   var isValid = validateCoordinates(a, b);
   if (!isValid)
